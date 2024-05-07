@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'dart:typed_data';
-
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -34,17 +32,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<RecognitionModel>? _recognitions;
-  File? _selectedImage;
-  final List<String> _imageList = ['test1.png', 'test2.jpeg', 'test3.png'];
-  int _index = 0;
+  final _imageList = <String>['test1.png', 'test2.jpeg', 'test3.png'];
+  final _picker = ImagePicker();
+
   int? _imageWidth;
   int? _imageHeight;
-  final ImagePicker _picker = ImagePicker();
-
+  File? _selectedImage;
+  List<RecognitionModel>? _recognitions;
   CameraController? controller;
-  bool _isDetecting = false;
-  bool _isLiveModeOn = false;
+
+  var _isDetecting = false;
+  var _isLiveModeOn = false;
+  var _index = 0;
 
   @override
   void initState() {
@@ -59,24 +58,17 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> live() async {
-    controller = CameraController(
-      cameras[0],
-      ResolutionPreset.high,
-    );
+    controller = CameraController(cameras[0], ResolutionPreset.high);
     await controller!.initialize().then(
       (_) {
-        if (!mounted) {
-          return;
-        }
+        if (!mounted) return;
         setState(() {});
       },
     );
     await controller!.startImageStream(
       (CameraImage cameraImage) async {
         if (_isDetecting) return;
-
         _isDetecting = true;
-
         await FlutterD2go.getStreamImagePrediction(
           imageBytesList:
               cameraImage.planes.map((plane) => plane.bytes).toList(),
@@ -100,8 +92,8 @@ class _MyAppState extends State<MyApp> {
                       e['mask'],
                       e['keypoints'] != null
                           ? (e['keypoints'] as List)
-                          .map((k) => Keypoint(k[0], k[1]))
-                          .toList()
+                              .map((k) => Keypoint(k[0], k[1]))
+                              .toList()
                           : null,
                       e['confidenceInClass'],
                       e['detectedClass']);
@@ -192,7 +184,6 @@ class _MyAppState extends State<MyApp> {
     final file = File('${(await getTemporaryDirectory()).path}/$fileName');
     await file.writeAsBytes(byteData.buffer
         .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
-
     return file;
   }
 
@@ -363,7 +354,7 @@ class MyButton extends StatelessWidget {
           ),
         ),
         style: ElevatedButton.styleFrom(
-          primary: Colors.grey[300],
+          backgroundColor: Colors.grey[300],
           elevation: 0,
         ),
       ),
