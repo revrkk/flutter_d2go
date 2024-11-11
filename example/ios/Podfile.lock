@@ -4,16 +4,16 @@ PODS:
   - Flutter (1.0.0)
   - flutter_d2go (0.6.1):
     - Flutter
-    - LibTorch (~> 1.9.0)
-    - LibTorchvision (= 0.10.0)
+    - LibTorch (~> 1.13.0.1)
+    - LibTorchvision (= 0.14.0)
   - image_picker_ios (0.0.1):
     - Flutter
-  - LibTorch (1.9.0):
-    - LibTorch/Core (= 1.9.0)
-  - LibTorch/Core (1.9.0):
+  - LibTorch (1.13.0.1):
+    - LibTorch/Core (= 1.13.0.1)
+  - LibTorch/Core (1.13.0.1):
     - LibTorch/Torch
-  - LibTorch/Torch (1.9.0)
-  - LibTorchvision (0.10.0)
+  - LibTorch/Torch (1.13.0.1)
+  - LibTorchvision (0.14.0)
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -43,13 +43,13 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
 
 SPEC CHECKSUMS:
-  camera_avfoundation: 759172d1a77ae7be0de08fc104cfb79738b8a59e
+  camera_avfoundation: dd002b0330f4981e1bbcb46ae9b62829237459a4
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_d2go: ad400141c8c45ec8a5a39366435ac1b3685c0447
-  image_picker_ios: b545a5f16c0fa88e3ecbbce3ed4de45567a8ec18
-  LibTorch: d89f452b8b932002bd98884b3921850a95c35e14
-  LibTorchvision: 5005f76146d310b7bb1f7ccfa618188f9e3a0dc2
-  path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
+  flutter_d2go: 8f8125df13911bda04762b27539f2dc772bcf2ff
+  image_picker_ios: c560581cceedb403a6ff17f2f816d7fea1421fc1
+  LibTorch: 8abfa5fc9d146230b31065a29b0502e1104956ea
+  LibTorchvision: a488b9103266ea8c5e3d2ed4028b080e75c8e9da
+  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
 
 PODFILE CHECKSUM: fe28524d052975a46c416ec54dc370d5e77973a0
 

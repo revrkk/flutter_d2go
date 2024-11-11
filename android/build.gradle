@@ -25,8 +25,8 @@ android {
     compileSdk 34
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
     namespace 'com.tsubauaaa.flutter_d2go'
     defaultConfig {
@@ -36,8 +36,8 @@ android {
 }
 
 dependencies{
-    implementation 'org.pytorch:pytorch_android_lite:1.11'
-    implementation 'org.pytorch:pytorch_android_torchvision_lite:1.11'
+    implementation 'org.pytorch:pytorch_android_lite:2.1.0'
+    implementation 'org.pytorch:pytorch_android_torchvision_lite:2.1.0'
     implementation 'org.pytorch:torchvision_ops:0.14.0'
-    implementation 'com.facebook.soloader:nativeloader:0.11.0'
+    implementation 'com.facebook.soloader:nativeloader:0.12.1'
 }

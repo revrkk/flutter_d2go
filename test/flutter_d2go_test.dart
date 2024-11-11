@@ -1,6 +1,4 @@
 import 'dart:io';
-import 'dart:typed_data';
-
 import 'package:flutter/services.dart';
 import 'package:flutter_d2go/flutter_d2go.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -10,9 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   const MethodChannel channel = MethodChannel('tsubauaaa.com/flutter_d2go');
-
   final List<MethodCall> log = <MethodCall>[];
-
   final Directory current = Directory.current;
 
   setUp(() {
